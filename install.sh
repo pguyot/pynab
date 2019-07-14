@@ -98,7 +98,15 @@ fi
 echo "Installing PyPi requirements"
 # Start with wheel which is required to compile some of the other requirements
 venv/bin/pip install wheel
-venv/bin/pip install -r requirements.txt
+if [ $travis_chroot -eq 1 ]; then
+  # Travis code is run with qemu which is configured for emulating an armv7l
+  # But we really want armv6l precompiled binaries in requirements.txt
+  sed -i.travis.bak -e "s|'armv6l'|'armv7l'|g" requirements.txt
+  venv/bin/pip install -r requirements.txt
+  mv requirements.txt.travis.bak requirements.txt
+else
+  venv/bin/pip install -r requirements.txt
+fi
 
 if [ $makerfaire2018 -eq 0 ]; then
   # maker faire card has no mic, no need to install snips

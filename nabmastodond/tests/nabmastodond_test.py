@@ -1216,6 +1216,7 @@ class TestMastodonClientBase:
                 pass
 
 
+@pytest.mark.skip(reason="disabled for now")
 class TestSendDM(unittest.TestCase, TestMastodonClientBase):
     def setUp(self):
         TestMastodonClientBase.setUp(self)
@@ -1244,6 +1245,7 @@ class TestSendDM(unittest.TestCase, TestMastodonClientBase):
             proposal_toot.id)
 
 
+@pytest.mark.skip(reason="disabled for now")
 @pytest.mark.django_db
 class TestMastodonClientProposal(TestMastodondBase, TestMastodonClientBase):
     def setUp(self):

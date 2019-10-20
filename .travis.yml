@@ -9,7 +9,7 @@ dist: bionic
 sudo: true
 script:
   - sh .travis_build_nlu_engines.sh
-  - pytest nabd
+  - pytest nabmastodond nabd
 addons:
   postgresql: "10"
 services:

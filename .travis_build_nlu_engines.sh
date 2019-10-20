@@ -2,7 +2,12 @@
 
 # Prepare and compile snips engines, for travis.
 # Regular installs should use install.sh script instead.
-cd /home/travis/build/nabaztag2018/pynab/
+if [ "$TRAVIS" != "true" ]; then
+    echo "This script is meant to be run on travis CI only"
+    echo "Please check install.sh instead"
+    exit 1
+fi
+cd $TRAVIS_BUILD_DIR
 python -m snips_nlu download fr
 python -m snips_nlu download en
 

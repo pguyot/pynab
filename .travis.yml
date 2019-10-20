@@ -8,7 +8,7 @@ python:
 dist: bionic
 sudo: true
 script:
-  - sh /home/travis/build/nabaztag2018/pynab/.travis_build_nlu_engines.sh
+  - sh .travis_build_nlu_engines.sh
   - pytest nabd
 addons:
   postgresql: "10"

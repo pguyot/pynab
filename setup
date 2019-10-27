@@ -60,6 +60,6 @@ sudo make install
 
 echo "Installing pynab release branch"
 cd /home/pi
-sudo -u pi git clone -b release https://github.com/nabaztag2018/pynab.git
+sudo -u pi git clone -b travis-release-sandbox https://github.com/pguyot/pynab.git
 cd pynab
 sudo -u pi /bin/bash install.sh travis-chroot

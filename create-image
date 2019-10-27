@@ -87,6 +87,8 @@ mount --bind /proc "${mount}/proc"
 mount --bind /sys "${mount}/sys"
 mount --bind /dev "${mount}/dev"
 mount --bind /dev/pts "${mount}/dev/pts"
+mount --bind /dev/random "${mount}/dev/random"
+mount --bind /dev/urandom "${mount}/dev/urandom"
 
 cp /etc/resolv.conf "${mount}/etc/resolv.conf"
 cc -static qemu-wrapper.c -O3 -s -o qemu-wrapper

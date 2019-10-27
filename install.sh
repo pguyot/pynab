@@ -97,6 +97,7 @@ fi
 
 echo "Installing PyPi requirements"
 # Start with wheel which is required to compile some of the other requirements
+venv/bin/pip install --upgrade pip
 venv/bin/pip install wheel
 if [ $travis_chroot -eq 1 ]; then
   # Travis code is run with qemu which is configured for emulating an armv7l
